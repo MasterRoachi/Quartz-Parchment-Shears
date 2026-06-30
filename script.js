@@ -59,6 +59,4 @@ function playGame() {
         alert("A draw! Well played!");
     }
 }
-
-
 playGame();
