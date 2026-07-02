@@ -8,7 +8,7 @@ Instead of the traditional rock, paper, and scissors, this version uses a slight
 * **Parchment**
 * **Shears**
 
-The game is played over five rounds between the human player and the computer.
+The project started as a simple console/prompt-based exercise and was later expanded into a full themed user interface with clickable buttons, score tracking, and round results displayed directly on the page.
 
 ## How It Works
 
@@ -26,41 +26,65 @@ After five rounds, the final score is displayed in the console, and the winner i
 
 ## Features
 
+* Themed visual layout
+* Custom background artwork
+* Custom heading and choice card images
+* Clickable choice buttons
 * Random computer choice generation
-* User input through `prompt()`
-* Case-insensitive player input
-* Five-round gameplay loop
 * Score tracking for both player and computer
-* Console messages for each round result
-* Final winner announcement
+* Round result messages displayed on the page
+* Hover effects on player choices
+* First-to-5 win condition
+* No browser prompts or alerts required for gameplay
 
 ## What I Practiced
 
-This project helped me practice the following JavaScript concepts:
+This project helped me practice the following concepts:
 
+### JavaScript
 * Variables
 * Arrays
 * Functions
-* Function scope
+* Function parameters
+* Return values
 * Conditional logic
-* Loops
-* String methods
+* Event listeners
+* DOM selection
+* DOM text updates
 * Random number generation
-* Console output
-* Basic user interaction with `prompt()` and `alert()`
+* Score tracking
+* Refactoring from console-based logic to UI-based logic
+
+### HTML
+
+* Semantic page structure
+* Buttons for user interaction
+* Image elements
+* Linking CSS and JavaScript files
+
+### CSS
+
+* Flexbox layout
+* Background images
+* Button styling
+* Hover effects
+* Responsive image sizing
+* Fixed-size UI elements
+* Layering a playable interface over a visual background
+
 
 ## Project Status
 
-This is the first version of the project and currently runs through browser prompts and console logs.
+Completed as a playable browser game.
 
-Future improvements may include:
+Possible future improvements:
+* Add animations for wins, losses, and draws
+* Add sound effects
+* Improve mobile responsiveness
+* Add a final victory/defeat screen
 
-* Adding a proper user interface
-* Replacing prompts with buttons
-* Displaying scores directly on the page
-* Adding round history
-* Improving input validation
+# Credits
 
-## Credits
+This project was completed as part of The Odin Project Foundations course.
 
-This project was completed as part of [The Odin Project](https://www.theodinproject.com/) Foundations course.
+Custom visual assets were created for this themed version of the project.

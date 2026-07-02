@@ -2,6 +2,7 @@ const options = ['quartz', 'parchment', 'shears'];
 
 let humanScore = 0;
 let computerScore = 0;
+let gameOver = false;
 
 const quartzButton = document.querySelector(".quartz");
 const parchmentButton = document.querySelector(".parchment");
@@ -9,8 +10,7 @@ const shearsButton = document.querySelector(".shears");
 
 const humanScoreDisplay = document.querySelector("#human-score");
 const computerScoreDisplay = document.querySelector("#computer-score");
-
-const roundResult = document.querySelector("#round-result")
+const roundResult = document.querySelector("#round-result");
 
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * options.length);
@@ -37,7 +37,36 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function checkWinner() {
+    if (humanScore >= 5) {
+        gameOver = true;
+        roundResult.textContent = "Huzzah! You are the victor!";
+
+        setTimeout(resetGame, 1000);
+    } else if (computerScore >= 5) {
+        gameOver = true;
+        roundResult.textContent = "Alas! The computer has bested you!";
+
+        setTimeout(resetGame, 1000)
+    }
+}
+
+function resetGame() {
+    humanScore = 0
+    computerScore = 0
+    gameOver = false;
+
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+
+    roundResult.textContent = "Choose wisely.";
+}
+
 function handleChoiceClick(humanChoice) {
+    if (gameOver) {
+        return;
+    }
+
     const computerChoice = getComputerChoice();
     const resultMessage = playRound(humanChoice, computerChoice)
 
@@ -46,7 +75,7 @@ function handleChoiceClick(humanChoice) {
     humanScoreDisplay.textContent = humanScore;
     computerScoreDisplay.textContent = computerScore;
 
-    console.log(`Human Score: ${humanScore} | Computer Score: ${computerScore}`);
+    checkWinner();
 }
 
 
